@@ -9,7 +9,7 @@ export default function Home() {
       
       <Header />
       <NavBar />
-      {/* <Body /> */}
+      <Body />
       <Footer />
     </div>
   );

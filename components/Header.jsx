@@ -13,15 +13,23 @@ function Header() {
   };
   return (
     <div className={styles.head}>
-      <GiSunflower />
+      <div className={styles.flower}>
+        <GiSunflower />
+      </div>
       <div className={styles.logo}>LOGO</div>
       <div className={styles.numbers}>
-        <CiSearch />
-
-        <CiUser />
-        <CiHeart />
-        <HiOutlineShoppingBag />
-
+        <div className={styles.headerIcons}>
+          <CiSearch />
+        </div>
+        <div className={styles.headerIcons}>
+          <CiUser />
+        </div>
+        <div className={styles.headerIcons}>
+          <CiHeart />
+        </div>
+        <div className={styles.headerIcons}>
+          <HiOutlineShoppingBag />
+        </div>
         <select
           className={styles.languageSelect}
           value={selectedLanguage}

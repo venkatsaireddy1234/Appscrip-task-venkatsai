@@ -13,10 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    justify-items: center;
   }
   .logo {
     font-size: 24px;
     font-weight: bold;
+    margin-left: 100px;
+    
   }
   
   .numbers {
@@ -29,6 +32,13 @@
   
   .number {
     font-size: 24px;
+  }
+  .flower{
+    width:50px;
+    font-size: 40px;
+  }
+  .headerIcons{
+    font-size: 30px;
   }
   
  
