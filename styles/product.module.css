@@ -1,0 +1,31 @@
+.image {
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+}
+.card {
+  background-color: seashell;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.textellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.heart {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.redHeart {
+  font-size: 10 0%;
+  color: red;
+}
+.heartButton{
+    background-color:seashell;
+    border: none;
+}

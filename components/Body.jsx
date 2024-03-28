@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/body.module.css";
+import ProductCard from "./ProductCard";
 function Body() {
   const [selectedPreference, setSelectedPreference] = useState("RECOMMNDED");
   const [products, setProducts] = useState([]);
@@ -20,7 +21,6 @@ function Body() {
 
     fetchProducts(); // Call the function to fetch products when the component mounts
   }, []);
-  console.log(products);
   return (
     <div>
       <div className={styles.ourProducts}>
@@ -61,7 +61,25 @@ function Body() {
       </div>
       <hr className={styles.hr} />
 
-      <div></div>
+      <div className={styles.productsContainer}>
+        {products && products.length > 0 ? (
+          products.map((product) => {
+            console.log(product.id);
+            return (
+              <ProductCard
+                className={styles.product}
+                key={product.id}
+                id={product.id}
+                image={product.image}
+                price={product.price}
+                name={product.title}
+              />
+            );
+          })
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </div>
   );
 }

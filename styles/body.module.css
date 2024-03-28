@@ -122,3 +122,10 @@
     background-color: #6c63ff;
     color: #fff;
   }
+  .productsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
