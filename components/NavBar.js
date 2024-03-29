@@ -21,6 +21,10 @@ function NavBar() {
         </div>
       </div>
       <hr className={styles.hr} />
+      <div className={styles.homeShop}>
+        <p>HOME <strong> | SHOP</strong></p>
+        
+      </div>
     </>
   );
 }

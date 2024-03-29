@@ -1,0 +1,43 @@
+.sideMenu {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.1s;
+}
+
+.sideMenuOpen {
+  width: 100px; /* Set the width of the sidebar when open */
+  padding: 50px; /* Add some padding to the sidebar */
+  margin-left: 130px;
+}
+.dropdownbtn {
+  color: #818181;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  display: block;
+  margin-bottom: 10px; /* Add space between links */
+}
+.dropdownContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  margin: 2px;
+}
+.dropDown {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.dropdowns {
+  display: flex;
+  flex-direction: column;
+}
+
+/* sideBar.module.css */
+
+.separator {
+  margin: 0 10px; /* Adjust margin as needed */
+  color: #000; /* Set the color of the separator */
+}

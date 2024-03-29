@@ -3,6 +3,7 @@ import { useState } from "react";
 import { CiUser, CiHeart, CiSearch } from "react-icons/ci";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { GiSunflower } from "react-icons/gi";
+import { AiOutlineMenu } from "react-icons/ai";
 
 function Header() {
   const [selectedLanguage, setSelectedLanguage] = useState("ENG");
@@ -13,6 +14,9 @@ function Header() {
   };
   return (
     <div className={styles.head}>
+      <div className={styles.hamburgerMenu}>
+        <AiOutlineMenu />
+      </div>
       <div className={styles.flower}>
         <GiSunflower />
       </div>
@@ -21,7 +25,7 @@ function Header() {
         <div className={styles.headerIcons}>
           <CiSearch />
         </div>
-        <div className={styles.headerIcons}>
+        <div className={styles.headerIconsUser}>
           <CiUser />
         </div>
         <div className={styles.headerIcons}>

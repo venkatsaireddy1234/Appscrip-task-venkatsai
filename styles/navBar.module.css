@@ -11,3 +11,19 @@
   margin-left: 0;
   margin-top: -60px;
 }
+
+.homeShop {
+  display: none; 
+}
+
+@media screen and (max-width: 768px) {
+  .navBar {
+    display: none; /* Hide the entire navigation bar on small screens */
+  }
+
+  .homeShop {
+    display: block; /* Show the Home/SHOP section only on small screens */
+    margin-top: 100px;
+    margin-left: 10px;
+  }
+}

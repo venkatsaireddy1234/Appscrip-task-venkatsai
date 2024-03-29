@@ -5,10 +5,6 @@
   padding: 40px 20px;
 }
 
-.header {
-  margin-bottom: 20px;
-}
-
 .text {
   font-size: 32px;
   font-weight: bold;
@@ -52,20 +48,7 @@
 
 .productsContainer {
   display: flex;
-  /* padding: 10px; */
-}
-
-.sideMenu {
-  width: 0; /* Initially hide the sidebar */
-  overflow: hidden;
-  transition: width 0.1s; /* Add smooth transition */
-}
-
-.sideMenuOpen {
-  width:600px; /* Set the width of the sidebar when open */
-  /* background-color: #f4f4f4; Background color of the sidebar */
-  padding: 50px; /* Add some padding to the sidebar */
-  margin-left: 130px;
+  padding: 10px;
 }
 
 .dropdowns {
@@ -73,43 +56,64 @@
   flex-direction: column;
 }
 
-.dropdownbtn {
-  text-decoration: none;
-  font-size: 18px;
-  color: #333;
-  display: block;
-  margin-bottom: 10px; /* Add space between links */
-}
-
-
 .productList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-
-.dropdownContainer{
-  display: flex;
-  flex-direction: column;
-  padding: 2px;
-  margin: 2px;
+.filterSpan {
+  margin: 10px;
 }
-.dropDown{
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
+/* header.module.css */
+
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+  .ourProducts {
+    padding: 20px; /* Decrease padding for mobile screens */
+  }
+
+  .text {
+    font-size: 24px; /* Decrease font size for mobile screens */
+  }
+
+  .description {
+    margin-top: 10px; /* Adjust margin for mobile screens */
+    margin-bottom: 0px;
+  }
 }
-
-
-
-
-
-
-.dropdownbtn {
-  color: #818181;
-  border: none;
-  background-color:  transparent;
+@media only screen and (min-width: 600px) {
+  .mobileParagraph {
+    margin: 0 165px 0 165px;
+  }
 }
+.textFilter {
+  display: none;
+}
+/* Style the dropdown content (hidden by default) */
+@media screen and (max-width: 768px) {
+  .filter {
+    display: none; /* Hide the button on mobile screens */
+  }
 
+  .textFilter {
+    display: block;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  .recommend{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: -10px;
+    
 
+  }
+  .filterSpan {
+    display: none; /* Hide the count of products */
+  }
+  .filters {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+}

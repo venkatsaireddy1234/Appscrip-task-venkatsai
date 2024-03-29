@@ -1,44 +1,64 @@
 .logo-header {
-    background-color: #f2f2f2;
-    padding: 10px;
-    text-align: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 100px;
+}
+
+.numbers {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.number {
+  font-size: 24px;
+}
+.flower {
+  width: 50px;
+  font-size: 40px;
+}
+.headerIcons {
+  font-size: 30px;
+}
+.headerIconsUser {
+  font-size: 30px;
+}
+
+.hamburgerMenu {
+  font-size: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .hamburgerMenu {
+    display: none;
   }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  /* Hide the logo and language select on mobile screens */
+  .headerIconsUser {
+    display: none;
   }
-  .head{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    justify-items: center;
+
+  .languageSelect {
+    display: none;
   }
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-left: 100px;
-    
-  }
-  
-  .numbers {
-    display: flex;
-    margin-left:20px;
-    margin-right: 40px;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .number {
-    font-size: 24px;
-  }
-  .flower{
-    width:50px;
-    font-size: 40px;
-  }
-  .headerIcons{
-    font-size: 30px;
-  }
-  
- 
+}

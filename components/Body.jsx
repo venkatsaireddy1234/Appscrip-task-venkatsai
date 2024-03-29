@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/body.module.css";
 import ProductCard from "./ProductCard";
+import SideBar from "./SideBar";
 
 function Body() {
   const [selectedPreference, setSelectedPreference] = useState("RECOMMENDED");
   const [products, setProducts] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+  const [occasionDropDown, setOccasionDropDown] = useState(false);
+  const [fabricDropDown, setFabricDropDown] = useState(false);
   // Function to handle Preference change
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+  };
+
+  const toggleDropdownOccasion = () => {
+    setOccasionDropDown(!occasionDropDown);
+  };
+  const toggleDropdownFabric = () => {
+    setFabricDropDown(!fabricDropDown);
   };
   const handlePreferenceChange = (event) => {
     setSelectedPreference(event.target.value);
@@ -38,10 +47,8 @@ function Body() {
         </div>
         <div className={styles.content}>
           <div className={styles.description}>
-            <p>
+            <p className={styles.mobileParagraph}>
               Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
-            </p>
-            <p>
               scelerisque. Dolor integer scelerisque nibh amet mi ut elementum
               dolor.
             </p>
@@ -51,75 +58,44 @@ function Body() {
       </div>
       <div className={styles.filters}>
         <div>
-          <button onClick={() => setMenuOpen(!menuOpen)}>
+          <span className={styles.filterSpan}>{products.length} Items</span>
+          <div className={styles.textFilter}>Filter</div>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className={styles.filter}
+          >
             {menuOpen ? "◄" : "►"} {menuOpen ? "Hide Filters" : "Show Filters"}
           </button>
         </div>
-        <div className={styles.recommend}>
-          <select
-            value={selectedPreference}
-            onChange={handlePreferenceChange}
-            className={styles.recommend}
-          >
-            <option value="RECOMMENDED" className={styles.recommend}>
-              RECOMMENDED
-            </option>
-            <option value="NEWEST FIRST">NEWEST FIRST</option>
-            <option value="POPULAR">POPULAR</option>
-            <option value="PRICE:HIGH TO LOW">PRICE : HIGH TO LOW</option>
-            <option value="PRICE:LOW TO HIGH">PRICE : LOW TO HIGH</option>
-          </select>
+        <div>
+          <div className={styles.recommend}>
+            <select
+              value={selectedPreference}
+              onChange={handlePreferenceChange}
+              className={styles.recommend}
+            >
+              <option value="RECOMMENDED" className={styles.recommend}>
+                RECOMMENDED
+              </option>
+              <option value="NEWEST FIRST">NEWEST FIRST</option>
+              <option value="POPULAR">POPULAR</option>
+              <option value="PRICE:HIGH TO LOW">PRICE : HIGH TO LOW</option>
+              <option value="PRICE:LOW TO HIGH">PRICE : LOW TO HIGH</option>
+            </select>
+          </div>
         </div>
       </div>
       <hr className={styles.hr} />
       <div className={styles.productsContainer}>
-        <div
-          className={`${styles.sideMenu} ${
-            menuOpen ? styles.sideMenuOpen : styles.sideMenuClosed
-          }`}
-        >
-          <div className={styles.sidenav}>
-            <div className={styles.dropDown}>
-              <button className={styles.dropdownbtn}>Ideal For</button>
-              <div onClick={toggleDropdown}>
-
-              {dropdownOpen ? <div>&#11165;</div> : <div>&#11167;</div>}{" "}
-              </div>
-            </div>
-            {dropdownOpen && (
-              <div className={styles.dropdownContainer}>
-                <div>
-                  <input type="checkbox" /> Men
-                </div>
-                <div>
-                  <input type="checkbox" /> Women
-                </div>
-                <div>
-                  <input type="checkbox" /> Baby & kids
-                </div>
-              </div>
-            )}
-            <hr />
-            <div className={styles.dropDown}>
-              <button className={styles.dropdownbtn}>Ideal For</button>
-              <div onClick={toggleDropdown}></div>
-              {dropdownOpen ? <div>&#11165;</div> : <div>&#11167;</div>}
-            </div>
-            {dropdownOpen && (
-              <div className={styles.dropdownContainer}>
-                <div>
-                  <input type="checkbox" /> Men
-                </div>
-                <div>
-                  <input type="checkbox" /> Women
-                </div>
-                <div>
-                  <input type="checkbox" /> Baby & kids
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
+        <SideBar
+          onToggleDropdown={toggleDropdown}
+          onToggleDropdownOccasion={toggleDropdownOccasion}
+          onToggleDropdownFabric={toggleDropdownFabric}
+          menuOpen={menuOpen}
+          dropdownOpen={dropdownOpen}
+          occasionDropDown={occasionDropDown}
+          fabricDropDown={fabricDropDown}
+        />
         <div className={styles.productList}>
           {products && products.length > 0 ? (
             products.map((product) => (

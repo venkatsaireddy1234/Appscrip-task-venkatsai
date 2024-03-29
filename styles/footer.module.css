@@ -95,6 +95,12 @@
     align-items: flex-start;
     
 }
+.footerItem > p:not(:first-child) {
+  display: block;
+}
+.footerItem{
+  display: block;
+}
 @media (max-width: 768px) {
   .footerContent {
     flex-direction: column;
@@ -103,5 +109,11 @@
   .footerItem {
     margin-right: 0;
     margin-bottom: 20px;
+  }
+  /*  */
+  
+  /* Show dropdown content when the parent item is clicked */
+  .footerItem.active > p:not(:first-child) {
+    display: block;
   }
 }
