@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 function ProductCard({ id, image, name, price }) {
   const [isLiked, setIsLiked] = useState(false);
-  const truncatedName = name.length > 40 ? name.slice(0, 40) + "..." : name;
+  const truncatedName = name && name.length > 40 ? name.slice(0, 40) + "..." : name;
   const handleHeartClick = () => {
     setIsLiked(!isLiked);
   };
