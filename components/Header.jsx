@@ -3,19 +3,48 @@ import { useState } from "react";
 import { CiUser, CiHeart, CiSearch } from "react-icons/ci";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { GiSunflower } from "react-icons/gi";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu,AiOutlineClose  } from "react-icons/ai";
+import SideBar from "./SideBar";
 
 function Header() {
   const [selectedLanguage, setSelectedLanguage] = useState("ENG");
-
+  const [sideBarActive, setSidebarActive] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [occasionDropDown, setOccasionDropDown] = useState(false);
+  const [fabricDropDown, setFabricDropDown] = useState(false);
   // Function to handle language change
   const handleLanguageChange = (event) => {
     setSelectedLanguage(event.target.value);
   };
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const toggleDropdownOccasion = () => {
+    setOccasionDropDown(!occasionDropDown);
+  };
+  const toggleDropdownFabric = () => {
+    setFabricDropDown(!fabricDropDown);
+  };
+  const toggleSideBar = () =>{
+    setSidebarActive(!sideBarActive);
+  }
+
   return (
     <div className={styles.head}>
-      <div className={styles.hamburgerMenu}>
-        <AiOutlineMenu />
+      <div className={styles.hamburgerMenu} >
+        {sideBarActive ? (
+            <AiOutlineClose onClick={toggleSideBar} />
+            ) : (
+              <AiOutlineMenu onClick={toggleSideBar} />
+            )}
+        {sideBarActive && <SideBar onToggleDropdown={toggleDropdown}
+          onToggleDropdownOccasion={toggleDropdownOccasion}
+          onToggleDropdownFabric={toggleDropdownFabric}
+          sideBarActive={sideBarActive}
+          dropdownOpen={dropdownOpen}
+          occasionDropDown={occasionDropDown}
+          fabricDropDown={fabricDropDown}/>}
       </div>
       <div className={styles.flower}>
         <GiSunflower />

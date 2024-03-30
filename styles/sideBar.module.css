@@ -41,3 +41,34 @@
   margin: 0 10px; /* Adjust margin as needed */
   color: #000; /* Set the color of the separator */
 }
+
+
+@media only screen and (max-width: 600px) {
+  .sideMenu {
+    position: absolute;
+    top: 40px;
+    left: 0.5px;
+    height: fit-content;
+    transition: left 0.1s;
+    width:fit-content;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+  }
+  
+  .sideMenuOpen {
+    left: 0;
+    transition: left 0.2s;
+    z-index: 1000;
+  }
+  .dropDown {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    font-size: small;
+  }
+  .dropdownContainer {
+    font-size: small;
+  }
+  
+}

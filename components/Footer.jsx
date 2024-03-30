@@ -4,20 +4,21 @@ import { FaInstagram } from "react-icons/fa";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { FaCcMastercard, FaPaypal, FaApplePay } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { GiUsaFlag } from "react-icons/gi";
 
 function Footer() {
   const [showMettaMuseDropdown, setShowMettaMuseDropdown] = useState(false);
-  const [ showQuickLinksDropdown, setShowQuickLinksDropdown] = useState(false);
-  const [ showFollowUs, setShowFollowus] = useState(false);
-  const toggleQuickLinksDropdown = () =>{
+  const [showQuickLinksDropdown, setShowQuickLinksDropdown] = useState(false);
+  const [showFollowUs, setShowFollowus] = useState(false);
+  const toggleQuickLinksDropdown = () => {
     setShowQuickLinksDropdown(!showQuickLinksDropdown);
-  }
+  };
   const toggleMettaMuseDropdown = () => {
     setShowMettaMuseDropdown(!showMettaMuseDropdown);
   };
-  const toggleFollowUs = () =>{
-    setShowFollowus(!showFollowUs)
-  }
+  const toggleFollowUs = () => {
+    setShowFollowus(!showFollowUs);
+  };
   useEffect(() => {
     const isMobileScreen = window.innerWidth <= 768;
     setShowMettaMuseDropdown(!isMobileScreen);
@@ -32,19 +33,39 @@ function Footer() {
             <strong>BE THE FIRST TO KNOW</strong>
           </p>
           <p>sign up for updates from metta muse</p>
-          <input
-            type="email"
-            placeholder="Enter your e-mail"
-            className={styles.input}
-          />
-          <button type="submit" className={styles.subscribe}>
-            SUBSCRIBE
-          </button>
+          <div className={styles.inputSub}>
+            <input
+              type="email"
+              placeholder="Enter your e-mail"
+              className={styles.input}
+            />
+            <button type="submit" className={styles.subscribe}>
+              SUBSCRIBE
+            </button>
+          </div>
         </div>
-        <div className={styles.footerItem}>
-          <p>CONTACT US</p>
-          <p>+44 221 133 5360</p>
-          <p>customercare@mettamuse.com</p>
+
+        <div className={styles.contactCUrr}>
+          <div className={styles.footerItem}>
+            <p>CONTACT US</p>
+            <div className={styles.customer}>
+              <p>+44 221 133 5360</p>
+              <p>customercare@mettamuse.com</p>
+            </div>
+          </div>
+          <div className={styles.rightFooter}>
+            <div>
+              <strong>CURRENCY</strong>
+            </div>
+            <div className={styles.curr}>
+              {" "}
+              <GiUsaFlag /> USD
+            </div>
+            <p className={styles.currency}>
+              Transactions will be completed in Euros and a currency reference
+              is available on hover
+            </p>
+          </div>
         </div>
       </div>{" "}
       <hr />
@@ -85,38 +106,29 @@ function Footer() {
           {showQuickLinksDropdown && (
             <>
               <p>Orders & Shipping</p>
-          <p>Join/Login as a Seller</p>
-          <p>Payment & Pricing</p>
-          <p>Return & Refunds</p>
-          <p>FAQs</p>
-          <p>Privacy Policy</p>
-          <p>Terms & Conditions</p>
+              <p>Join/Login as a Seller</p>
+              <p>Payment & Pricing</p>
+              <p>Return & Refunds</p>
+              <p>FAQs</p>
+              <p>Privacy Policy</p>
+              <p>Terms & Conditions</p>
             </>
           )}
-       
-       </div>
-       <div className={styles.footerItem}>
-
+        </div>
+        <div className={styles.footerItem}>
           <div className={styles.copyright}>
             <div>
               <strong>Follow Us:</strong>
               <div onClick={toggleFollowUs}>
-              {showFollowUs ? (
-                <div>&#11165;</div>
-              ) : (
-                <div>&#11167;</div>
-              )}{" "}
+                {showFollowUs ? <div>&#11165;</div> : <div>&#11167;</div>}{" "}
+              </div>
             </div>
-            </div>
-            {
-              showFollowUs && (
+            {showFollowUs && (
               <div className={styles.socialIcons}>
-              <FaInstagram />
-              <TiSocialLinkedinCircular />
-            </div>
-              )
-            }
-            
+                <FaInstagram />
+                <TiSocialLinkedinCircular />
+              </div>
+            )}
           </div>
           <div className={styles.copyright}>
             <p>

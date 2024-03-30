@@ -49,9 +49,8 @@
   align-items: center;
   justify-content: space-around;
 }
-.socialIcons{
-    font-size: 25px;
-  
+.socialIcons {
+  font-size: 25px;
 }
 .footerIcon {
   border-color: black;
@@ -64,42 +63,60 @@
   align-items: center;
   justify-content: center;
   font-size: 22px;
+}
+.pay {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.input {
+  /* margin: 10px; */
+  padding: 10px 40px 10px 40px;
+  border-radius: 5px;
+  /* margin:; */
+}
+.subscribe {
+  color: grey;
+  background-color: black;
+  margin: 2px;
+  /* padding: 5px 20px 5px 20px; */
+  padding: 10px 40px 10px 40px;
 
+  border-radius: 5px;
+  border-color: grey;
+  font-size: 10px;
 }
-.pay{
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    font-family:Georgia, 'Times New Roman', Times, serif
-}
-.input{
-    /* margin: 10px; */
-    padding: 10px 40px 10px 40px;
-    border-radius: 5px;
-    /* margin:; */
-}
-.subscribe{
-    color: grey;
-    background-color: black;
-    margin: 2px;
-    /* padding: 5px 20px 5px 20px; */
-    padding: 10px 40px 10px 40px;
-
-    border-radius: 5px;
-    border-color: grey;
-    font-size: 10px;
-}
-.copyright{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .footerItem > p:not(:first-child) {
   display: block;
 }
-.footerItem{
+.footerItem {
   display: block;
+}
+
+.currency {
+  font-size: x-small;
+}
+.rightFooter {
+  /* margin: 10px; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* background-color: #45a049; */
+  padding: 10px;
+  justify-items: center;
+}
+.contactCUrr {
+  display: flex;
+  flex-direction: column;
+}
+.curr{
+  margin: 5px;
 }
 @media (max-width: 768px) {
   .footerContent {
@@ -110,8 +127,23 @@
     margin-right: 0;
     margin-bottom: 20px;
   }
+  .currency{
+    display: none;
+  }
+  .inputSub{
+    display: flex;
+    overflow: hidden;
+  }
+  .customer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+  }
+  .rightFooter{
+    margin: -10px;
+  }
   /*  */
-  
+
   /* Show dropdown content when the parent item is clicked */
   .footerItem.active > p:not(:first-child) {
     display: block;
