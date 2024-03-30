@@ -8,11 +8,11 @@ import SideBar from "./SideBar";
 
 function Header() {
   const [selectedLanguage, setSelectedLanguage] = useState("ENG");
-  const [sideBarActive, setSidebarActive] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [occasionDropDown, setOccasionDropDown] = useState(false);
   const [fabricDropDown, setFabricDropDown] = useState(false);
-  // Function to handle language change
   const handleLanguageChange = (event) => {
     setSelectedLanguage(event.target.value);
   };
@@ -27,21 +27,21 @@ function Header() {
     setFabricDropDown(!fabricDropDown);
   };
   const toggleSideBar = () =>{
-    setSidebarActive(!sideBarActive);
+    setMenuOpen(!menuOpen);
   }
 
   return (
     <div className={styles.head}>
       <div className={styles.hamburgerMenu} >
-        {sideBarActive ? (
+        {menuOpen ? (
             <AiOutlineClose onClick={toggleSideBar} />
             ) : (
               <AiOutlineMenu onClick={toggleSideBar} />
             )}
-        {sideBarActive && <SideBar onToggleDropdown={toggleDropdown}
+        {menuOpen && <SideBar onToggleDropdown={toggleDropdown}
           onToggleDropdownOccasion={toggleDropdownOccasion}
           onToggleDropdownFabric={toggleDropdownFabric}
-          sideBarActive={sideBarActive}
+          menuOpen={menuOpen}
           dropdownOpen={dropdownOpen}
           occasionDropDown={occasionDropDown}
           fabricDropDown={fabricDropDown}/>}

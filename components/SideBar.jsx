@@ -9,11 +9,10 @@ function SideBar({
   onToggleDropdownOccasion,
   onToggleDropdownFabric,
   occasionDropDown,
-  sideBarActive
 }) {
   return (
     <div>
-      {sideBarActive && ( // Check if sideBarActive is true
+      {menuOpen && (
         <div
           className={`${styles.sideMenu} ${
             menuOpen ? styles.sideMenuOpen : styles.sideMenuClosed
@@ -49,11 +48,7 @@ function SideBar({
                   <button className={styles.dropdownbtn}>Occasion</button>
                 </div>
                 <div onClick={onToggleDropdownOccasion}>
-                  {occasionDropDown ? (
-                    <div>&#11165;</div>
-                  ) : (
-                    <div>&#11167;</div>
-                  )}
+                  {occasionDropDown ? <div>&#11165;</div> : <div>&#11167;</div>}
                 </div>
               </div>
             </div>
@@ -77,11 +72,7 @@ function SideBar({
                   <button className={styles.dropdownbtn}>Fabric</button>
                 </div>
                 <div onClick={onToggleDropdownFabric}>
-                  {fabricDropDown ? (
-                    <div>&#11165;</div>
-                  ) : (
-                    <div>&#11167;</div>
-                  )}
+                  {fabricDropDown ? <div>&#11165;</div> : <div>&#11167;</div>}
                 </div>
               </div>
             </div>

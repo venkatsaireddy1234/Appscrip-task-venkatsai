@@ -65,20 +65,19 @@
 .filterSpan {
   margin: 10px;
 }
-/* header.module.css */
 
-/* Media query for mobile screens */
+
 @media screen and (max-width: 768px) {
   .ourProducts {
-    padding: 20px; /* Decrease padding for mobile screens */
+    padding: 20px; 
   }
 
   .text {
-    font-size: 24px; /* Decrease font size for mobile screens */
+    font-size: 24px; 
   }
 
   .description {
-    margin-top: 10px; /* Adjust margin for mobile screens */
+    margin-top: 10px; 
     margin-bottom: 0px;
   }
 }
@@ -90,10 +89,9 @@
 .textFilter {
   display: none;
 }
-/* Style the dropdown content (hidden by default) */
 @media screen and (max-width: 768px) {
   .filter {
-    display: none; /* Hide the button on mobile screens */
+    display: none; 
   }
 
   .textFilter {
@@ -109,7 +107,7 @@
 
   }
   .filterSpan {
-    display: none; /* Hide the count of products */
+    display: none; 
   }
   .filters {
     display: flex;

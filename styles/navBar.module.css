@@ -18,11 +18,11 @@
 
 @media screen and (max-width: 768px) {
   .navBar {
-    display: none; /* Hide the entire navigation bar on small screens */
+    display: none; 
   }
 
   .homeShop {
-    display: block; /* Show the Home/SHOP section only on small screens */
+    display: block; 
     margin-top: 100px;
     margin-left: 10px;
   }

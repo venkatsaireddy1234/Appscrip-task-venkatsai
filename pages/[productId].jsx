@@ -35,9 +35,7 @@ const ProductPage = () => {
 
   return (
     <div>
-      {/* Render product details */}
       <h1>{product.name}</h1>
-      {/* Use Next.js Image component for product image */}
       <div>
         
         <img src={product.image} alt={product.name} width={300} height={300} />

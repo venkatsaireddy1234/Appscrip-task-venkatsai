@@ -10,7 +10,6 @@ function Body() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [occasionDropDown, setOccasionDropDown] = useState(false);
   const [fabricDropDown, setFabricDropDown] = useState(false);
-  // Function to handle Preference change
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -36,7 +35,7 @@ function Body() {
       }
     };
 
-    fetchProducts(); // Call the function to fetch products when the component mounts
+    fetchProducts(); 
   }, []);
 
   return (
